@@ -33,7 +33,7 @@ def fetch_main_content_advanced(url, start_phrase, end_phrase):
 
         if start_index != -1 and end_index != -1:
             extracted_content = clean_content[start_index:end_index].strip()
-            return split_into_chunks(extracted_content)  # Return chunks
+            return split_into_chunks(extracted_content)
         else:
             raise ValueError("Specified phrases not found in the content.")
     else:
@@ -54,7 +54,6 @@ def split_into_chunks(content, chunk_size=500):
 
     if current_chunk:
         chunks.append(" ".join(current_chunk))
-
     return chunks
 
 # Function to extract entities from content 
@@ -186,6 +185,7 @@ def process_bio_page(bio_url, biography_content, folder_name, website_type):
     if website_type == 2:
         if "/en/" in bio_url.lower():
             language = "English"
+                   all_entities_csv_name = "enyc
         elif "/ar/" in bio_url.lower():
             language = "Arabic"
         else:
@@ -228,4 +228,9 @@ def process_bio_page(bio_url, biography_content, folder_name, website_type):
     graph_image = generate_graphs(csv_name)
     if language == "English":
         interactive_graph = generate_interactive_graph(csv_name)
+
+    with open("all_entities.csv", mode='a', newline='', encoding='utf-8-sig') as csv_file:
+        writer = csv.writer(csv_file)
+        for (entity, label), count in sorted_entity_counts:
+            writer.writerow([bio_url, entity, label, count])
 
