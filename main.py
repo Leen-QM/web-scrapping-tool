@@ -1,11 +1,16 @@
 import traceback
 from scrapper_v2 import fetch_main_content_advanced, process_bio_page
 from finalCrawling import crawl_and_extract_links
-
+import csv
 
 # Main script
 if __name__ == "__main__":
     website_type = input("Please choose the type of website:\n1. Collection\n2. Encyclopedia\nEnter the number corresponding to your choice: ").strip()
+
+    with open("all_entities.csv", mode='w', newline='', encoding='utf-8-sig') as csv_file:
+        writer = csv.writer(csv_file)  # Pass the file object, not the string
+        writer.writerow(['Link', 'Entity', 'Label', 'Occurrences'])
+
 
     # Ensure website_type is an integer
     try:
