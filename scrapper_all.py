@@ -225,6 +225,11 @@ def process_bio_page(bio_url, biography_content, folder_name, website_type):
 
     word_cloud_image = generate_word_cloud(csv_name, [bio_url], os.path.join(folder_name, bio_url.split('/')[-1].replace('.aspx', '') + '_wordcloud.png'))
     graph_image = generate_graphs(csv_name)
-    if language == "English":
-        interactive_graph = generate_interactive_graph(csv_name)
+   # if language == "English":
+        #interactive_graph = generate_interactive_graph(csv_name)
+
+    with open("all_entities.csv", mode='a', newline='', encoding='utf-8-sig') as csv_file:
+        writer = csv.writer(csv_file)
+        for (entity, label), count in sorted_entity_counts:
+            writer.writerow([bio_url, entity, label, count])
 

@@ -30,10 +30,11 @@ def crawl_and_extract_links(base_url, website_type, url_path):
     visited_urls = set()  # Set to store visited URLs
     urls_to_visit = [base_url]  # List to store URLs to visit next
     url_list = []  # List to store URLs with specified path
-    if website_type == 1:
-        url_path = "/objects/"
+    '''if website_type == 1:
+        url_path = "/objects"
     elif website_type == 2:
         url_path = "/bios/Pages/"
+    '''
 
     while urls_to_visit:
         current_url = urls_to_visit.pop(0)  # Dequeue the first URL
