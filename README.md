@@ -58,8 +58,8 @@ python main.py
 
 ### 3️⃣ Utilize the outputs and visualizations (word clouds and static network graphs):
 ![image](https://github.com/user-attachments/assets/955250a6-545e-4f65-9afd-a8c17e248636)
-![image](https://github.com/user-attachments/assets/19c903eb-59f5-428c-9fe3-6161bb4f0f11)
 
+![image](https://github.com/user-attachments/assets/19c903eb-59f5-428c-9fe3-6161bb4f0f11)
 
 
 ## 📌 Usage for the interactive visualization tool
@@ -101,7 +101,6 @@ python -m http.server 8000
 ## 📂 File Structure for the interactive visualization tool
 
 ```
-├── d3-7.9.0/                   # Folder containing D3.js library
 ├── index.html                  # Main HTML file for visualization
 ├── script.js                   # JavaScript file containing D3.js logic 
 ```
