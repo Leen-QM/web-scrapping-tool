@@ -23,7 +23,7 @@ This project is a **web scraping and data analysis tool** that extracts, process
 
 ✅ Arabic text reshaping with `arabic-reshaper` and `python-bidi`
 
-✅ Network graph generation with `networkx` and [`d3graph`](https://erdogant.github.io/d3graph/pages/html/index.html)
+✅ Network graph generation with `networkx` and [`d3.js`](https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=hero&utm_campaign=try-observable)
 
 ✅ Named entity recognition with [`GLiNER`](https://github.com/urchade/GLiNER)
 
@@ -31,16 +31,21 @@ This project is a **web scraping and data analysis tool** that extracts, process
 
 ## 🔧 Installation
 
-### Prerequisites
+### Prerequisites for the scraping tool
 Ensure you have Python installed on your system. Install the required dependencies using:
 
 ```sh
 pip install -r requirements.txt
 ```
 
+### Prerequisites for the interactive visualization tool
+Ensure you have CSV files with multiple Artists/Objects and in the following format
+
+![image](https://github.com/user-attachments/assets/6593f809-715c-4596-8d55-bf84c25d9dfe)
+
 ---
 
-## 📌 Usage
+## 📌 Usage for the scraping tool
 
 ### 1️⃣ Run the main.py:
 ```sh
@@ -51,15 +56,31 @@ python main.py
 ![image](https://github.com/user-attachments/assets/51639781-a30c-48f9-89a0-8bfa4ec58e5e)
 
 
-### 3️⃣ Utilize the outputs and visualizations (word clouds and network graphs):
+### 3️⃣ Utilize the outputs and visualizations (word clouds and static network graphs):
 ![image](https://github.com/user-attachments/assets/955250a6-545e-4f65-9afd-a8c17e248636)
 
-![image](https://github.com/user-attachments/assets/184a1f79-6dd7-427c-8dec-52d3258d25a8)
 
+## 📌 Usage for the interactive visualization tool
+
+### 1️⃣ Run the local server at the folder path with the desired port:
+```sh
+python -m http.server 8000
+```
+
+### 2️⃣ Upload the CSV file:
+![image](https://github.com/user-attachments/assets/e54a1512-03af-4a46-9052-d2884459ffcf)
+
+
+### 3️⃣ Utilize the filtering options and visualize the relationships:
+**Filter and show relationships between artists based on connected persons:**
+![image](https://github.com/user-attachments/assets/1525ecb5-517f-42b2-aaa5-c8ba158661a1)
+
+**Filter and show relationships between artist based on connected places:**
+![image](https://github.com/user-attachments/assets/f9355742-221b-48fb-9bd7-89a77cc7e1f2)
 
 ---
 
-## 📂 File Structure
+## 📂 File Structure for the scraping tool
 
 ```
 ├── main.py                      # Main
@@ -75,6 +96,13 @@ python main.py
 ├── countries_and_demonyms.csv   # Important data for finalMapping_v2.py 
 ```
 
+## 📂 File Structure for the interactive visualization tool
+
+```
+├── d3-7.9.0/                   # Folder containing D3.js library
+├── index.html                  # Main HTML file for visualization
+├── script.js                   # JavaScript file containing D3.js logic 
+```
 ---
 
 ## 🤝 Contributing
